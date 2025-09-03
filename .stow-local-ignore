@@ -2,3 +2,4 @@
 \.gitignore
 Brewfile
 README.md
+.prettierrc.json
