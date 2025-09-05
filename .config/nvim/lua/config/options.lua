@@ -2,6 +2,9 @@
 -- Note, this needs to be specified before loading Lazy.nvim, hence define it here.
 vim.g.mapleader = " "
 
+-- Clipboard
+vim.opt.clipboard = "unnamedplus"
+
 -- Use block cursor
 vim.opt.guicursor = ""
 
