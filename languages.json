@@ -1,0 +1,14 @@
+{
+	"language_servers": [
+		"ts_ls",
+		"tailwindcss",
+		"kotlin_lsp",
+	],
+	"formatters_by_ft": {
+		"lua": [ "stylua" ],
+		"kotlin": [ "ktfmt" ],
+		"typescript": [ "prettier" ],
+		"typescriptreact": [ "prettier" ],
+		"markdown": [ "prettier" ],
+	},
+}
