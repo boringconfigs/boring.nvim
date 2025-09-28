@@ -35,6 +35,7 @@ The leader key is set to `space`.
 - **Wrapping**: Line wrapping is disabled.
 - **Indentation**: Uses 4 spaces for tabs.
 - **Search**: Smart case search is enabled.
+
 ## Installation
 
 You can find installation instructions from [here](https://github.com/boringconfigs/#installation).
