@@ -8,6 +8,7 @@ return {
 		"ts_ls",
 		"tailwindcss",
 		"kotlin_lsp",
+		"gopls",
 	},
 	--[[ List of formatters by filetype. In order to add new formatters, you need to do the following:
     --     1. Find and install the formatter.
@@ -20,5 +21,6 @@ return {
 		typescript = { "prettier" },
 		typescriptreact = { "prettier" },
 		markdown = { "prettier" },
+		go = { "gofmt" },
 	},
 }
