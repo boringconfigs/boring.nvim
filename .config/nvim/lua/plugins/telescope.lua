@@ -18,6 +18,13 @@ return {
 					return { "--hidden" }
 				end,
 			},
+			buffers = {
+				mappings = {
+					n = {
+						["dd"] = "delete_buffer",
+					},
+				},
+			},
 		},
 	},
 }
