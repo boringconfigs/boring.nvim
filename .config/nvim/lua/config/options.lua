@@ -33,6 +33,3 @@ vim.opt.expandtab = true
 -- Search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-
--- File searches
-vim.opt.wildignore:append(".git/**")
