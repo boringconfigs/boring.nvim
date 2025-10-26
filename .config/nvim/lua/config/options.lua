@@ -2,9 +2,6 @@
 -- Note, this needs to be specified before loading Lazy.nvim, hence define it here.
 vim.g.mapleader = " "
 
--- Clipboard
-vim.opt.clipboard = "unnamedplus"
-
 -- Use block cursor
 vim.opt.guicursor = ""
 
@@ -27,19 +24,15 @@ vim.opt.wrap = false
 -- Disable swap file
 vim.opt.swapfile = false
 
--- Use a retry dir
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
-
 -- Indentation
 vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.softtabstop = -1
 vim.opt.expandtab = true
-vim.opt.smartindent = true
 
 -- Search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+-- File searches
 vim.opt.wildignore:append(".git/**")
