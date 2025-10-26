@@ -42,3 +42,4 @@ vim.opt.smartindent = true
 -- Search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.wildignore:append(".git/**")
