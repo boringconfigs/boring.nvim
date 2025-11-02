@@ -6,3 +6,5 @@ install:
 	brew bundle
 configure:
 	stow . --target="${HOME}"
+omarchy:
+	ln -ns "${HOME}/.config/omarchy/current/theme/neovim.lua" "${HOME}/.config/nvim/lua/plugins/local/omarchy-theme.lua"

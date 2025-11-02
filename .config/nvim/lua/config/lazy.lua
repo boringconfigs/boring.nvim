@@ -27,8 +27,14 @@ require("lazy").setup({
 	-- automatically check for plugin updates
 	checker = { enabled = true },
 	change_detection = {
-		enabled = false,
+		enabled = true,
 		notify = false,
 	},
 	{ "nvim-treesitter/nvim-treesitter", branch = "master", lazy = false, build = ":TSUpdate" },
+
+    -- Workaround for Omarchy's dependence on LazyVim
+    dev = {
+        path = "~/.config/nvim/omarchy/",
+        patterns = {"LazyVim"},
+    },
 })
