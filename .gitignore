@@ -1,2 +1,2 @@
-.config/nvim/lua/plugins/local/*
+.config/nvim/lua/plugins/theme.lua
 !.gitkeep
