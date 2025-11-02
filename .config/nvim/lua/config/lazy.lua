@@ -25,11 +25,14 @@ require("lazy").setup({
 	-- colorscheme that will be used when installing plugins.
 	install = { colorscheme = { "habamax" } },
 	-- automatically check for plugin updates
-	checker = { enabled = true },
-	change_detection = {
-		enabled = true,
-		notify = false,
-	},
+	checker = {
+        enabled = true,
+        notify = false,
+    },
+    change_detection = {
+        enabled = true,
+        notify = false,
+    },
 	{ "nvim-treesitter/nvim-treesitter", branch = "master", lazy = false, build = ":TSUpdate" },
 
     -- Workaround for Omarchy's dependence on LazyVim
