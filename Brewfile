@@ -10,4 +10,3 @@ brew "ripgrep"
 # brew "stylua"
 
 brew "stow"
-system "${HOMEBREW_PREFIX}/opt/stow/bin/stow . --target=${HOME}"
