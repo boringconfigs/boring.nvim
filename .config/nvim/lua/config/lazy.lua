@@ -35,10 +35,4 @@ require("lazy").setup({
 		notify = false,
 	},
 	{ "nvim-treesitter/nvim-treesitter", branch = "master", lazy = false, build = ":TSUpdate" },
-
-	-- Workaround for Omarchy's dependence on LazyVim
-	dev = {
-		path = "~/.config/nvim/omarchy/",
-		patterns = { "LazyVim" },
-	},
 })
