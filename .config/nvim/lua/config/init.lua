@@ -1,4 +1,4 @@
 require("config.options")
 require("config.lazy")
 require("config.keys")
-require("config.background")
+require("config.transparent-background")
