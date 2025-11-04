@@ -8,6 +8,9 @@ return {
 			pattern = "LazyReload",
 			callback = function()
 				vim.schedule(function()
+					-- Kanagawa expects background to be dark. As a workaround reset it here.
+					vim.opt.background = "dark"
+
 					theme_spec = require("plugins.local.theme")
 					local config = theme_spec["config"]
 					if config then
