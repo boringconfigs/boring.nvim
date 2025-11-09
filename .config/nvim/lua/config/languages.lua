@@ -9,6 +9,9 @@ return {
 		"tailwindcss",
 		"kotlin_lsp",
 		"gopls",
+		"lua_ls",
+		"json_ls",
+		"yamlls",
 	},
 	--[[ List of formatters by filetype. In order to add new formatters, you need to do the following:
     --     1. Find and install the formatter.
