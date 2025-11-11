@@ -43,7 +43,7 @@ require("telescope").setup({
 	},
 })
 
-builtin = require("telescope.builtin")
+local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>f", builtin.find_files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader><leader>", builtin.find_files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader>/", builtin.live_grep, { desc = "Telescope live grep" })
@@ -53,8 +53,6 @@ vim.keymap.set("n", "<leader>r", builtin.lsp_references, { desc = "Telescope LSP
 
 require("lazydev").setup({
 	library = {
-		-- See the configuration section for more details
-		-- Load luvit types when the `vim.uv` word is found
 		{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
 	},
 })
@@ -65,11 +63,13 @@ require("nvim-treesitter.configs").setup({
 		enable = true,
 		additional_vim_regex_highlighting = true,
 	},
+	ensure_installed = {},
+	sync_install = false,
+	ignore_install = {},
+	modules = {},
 	incremental_selection = {
 		enable = true,
 		keymaps = {
-			-- Use the default keymap upcoming versions of Neovim
-			-- will use for incremental selection.
 			node_incremental = "an",
 			node_decremental = "in",
 			init_selection = false,
