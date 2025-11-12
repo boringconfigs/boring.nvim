@@ -15,6 +15,7 @@ vim.opt.expandtab = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.keymap.set("n", "<leader>e", "<cmd>Ex<cr>", { desc = "Open file explorer" })
+vim.keymap.set("t", "<esc><esc>", [[<C-\><C-n>]], { desc = "Enter normal mode in terminal" })
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 
 require("plugins")
@@ -25,13 +26,13 @@ require("plugins")
 --     3. Add the name of it (the name of the file without .lua extension) to below list.
 --]]
 local language_servers = {
-    "ts_ls",
-    "tailwindcss",
-    "kotlin_lsp",
-    "gopls",
-    "lua_ls",
-    "json_ls",
-    "yamlls",
+	"ts_ls",
+	"tailwindcss",
+	"kotlin_lsp",
+	"gopls",
+	"lua_ls",
+	"json_ls",
+	"yamlls",
 }
 local on_attach = function(client, bufnr)
 	vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
