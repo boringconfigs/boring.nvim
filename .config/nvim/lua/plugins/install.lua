@@ -19,7 +19,6 @@ local add = MiniDeps.add
 add({ source = "stevearc/conform.nvim" })
 add({ source = "tpope/vim-surround" })
 add({ source = "nvim-telescope/telescope.nvim", checkout = "0.1.8", depends = { "nvim-lua/plenary.nvim" } })
-add({ source = "folke/lazydev.nvim" })
 add({ source = "neovim/nvim-lspconfig" })
 add({ source = "nvim-treesitter/nvim-treesitter" })
 add({ source = "catppuccin/nvim", name = "catppuccin" })

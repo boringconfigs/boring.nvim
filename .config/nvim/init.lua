@@ -14,30 +14,9 @@ vim.opt.softtabstop = -1
 vim.opt.expandtab = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.clipboard:append("unnamedplus")
 vim.keymap.set("n", "<leader>e", "<cmd>Ex<cr>", { desc = "Open file explorer" })
 vim.keymap.set("t", "<esc><esc>", [[<C-\><C-n>]], { desc = "Enter normal mode in terminal" })
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 
 require("plugins")
-
---[[ List of enabled language servers. In order to add new languages, you need to do the following:
---     1. Find and install the language server for the language.
---     2. Find the configuration for the language server in nvim-lspconfig in https://github.com/neovim/nvim-lspconfig/tree/master/lsp
---     3. Add the name of it (the name of the file without .lua extension) to below list.
---]]
-local language_servers = {
-	"ts_ls",
-	"tailwindcss",
-	"kotlin_lsp",
-	"gopls",
-	"lua_ls",
-	"json_ls",
-	"yamlls",
-}
-local on_attach = function(client, bufnr)
-	vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
-end
-for _, server in ipairs(language_servers) do
-	vim.lsp.config(server, { on_attach = on_attach })
-end
-vim.lsp.enable(language_servers)
