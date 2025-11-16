@@ -70,4 +70,21 @@ require("nvim-treesitter.configs").setup({
 	},
 })
 
-vim.cmd.colorscheme("catppuccin-mocha")
+require("omarchy-theme-loader").setup({
+	themes = {
+		["tokyo-night"] = { colorscheme = "slate" },
+		catppuccin = { colorscheme = "habamax" },
+		everforest = { colorscheme = "desert" },
+		gruvbox = { colorscheme = "retrobox" },
+		["osaka-jade"] = { colorscheme = "slate" },
+		kanagawa = { colorscheme = "slate" },
+		nord = { colorscheme = "blue" },
+		["matte-black"] = { colorscheme = "koehler" },
+		ristretto = { colorscheme = "koehler" },
+		["flexoki-light"] = { colorscheme = "morning" },
+		["rose-pine"] = { colorscheme = "morning" },
+		["catppuccin-latte"] = { colorscheme = "delek" },
+		custom = { colorscheme = "default" },
+	},
+})
+vim.cmd.colorscheme("default")
