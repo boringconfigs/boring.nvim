@@ -73,4 +73,5 @@ require("nvim-treesitter.configs").setup({
 	},
 })
 
-vim.cmd.colorscheme("default")
+vim.cmd.colorscheme("retrobox")
+require("omarchy-theme-loader.transparency").set_transparent_background()
