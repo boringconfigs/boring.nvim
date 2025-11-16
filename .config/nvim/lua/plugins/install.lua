@@ -40,6 +40,9 @@ require("omarchy-theme-loader").setup({
 	},
 })
 
+vim.cmd.colorscheme("retrobox")
+require("omarchy-theme-loader.transparency").set_transparent_background()
+
 require("monokai-pro").setup({
 	filter = "ristretto",
 	override = function()
