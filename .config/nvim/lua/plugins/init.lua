@@ -19,7 +19,9 @@ require("conform").setup({
 })
 
 local fzfLua = require("fzf-lua")
-fzfLua.setup({})
+fzfLua.setup({
+	file_ignore_patterns = { "node_modules/", ".git/" },
+})
 
 vim.keymap.set("n", "<leader>f", fzfLua.files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader><leader>", fzfLua.files, { desc = "Telescope find files" })
