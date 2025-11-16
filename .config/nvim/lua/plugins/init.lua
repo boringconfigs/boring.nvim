@@ -18,39 +18,15 @@ require("conform").setup({
 	},
 })
 
-require("telescope").setup({
-	defaults = {
-		file_ignore_patterns = {
-			"^.git/",
-			"^node_modules/",
-		},
-	},
-	pickers = {
-		find_files = {
-			hidden = true,
-		},
-		live_grep = {
-			additional_args = function(_)
-				return { "--hidden" }
-			end,
-		},
-		buffers = {
-			mappings = {
-				n = {
-					["dd"] = "delete_buffer",
-				},
-			},
-		},
-	},
-})
+local fzfLua = require("fzf-lua")
+fzfLua.setup({})
 
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>f", builtin.find_files, { desc = "Telescope find files" })
-vim.keymap.set("n", "<leader><leader>", builtin.find_files, { desc = "Telescope find files" })
-vim.keymap.set("n", "<leader>/", builtin.live_grep, { desc = "Telescope live grep" })
-vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "Telescope buffers" })
-vim.keymap.set("n", "<leader>d", builtin.diagnostics, { desc = "Telescope diagnostics" })
-vim.keymap.set("n", "<leader>r", builtin.lsp_references, { desc = "Telescope LSP references" })
+vim.keymap.set("n", "<leader>f", fzfLua.files, { desc = "Telescope find files" })
+vim.keymap.set("n", "<leader><leader>", fzfLua.files, { desc = "Telescope find files" })
+vim.keymap.set("n", "<leader>/", fzfLua.grep, { desc = "Telescope live grep" })
+vim.keymap.set("n", "<leader>b", fzfLua.buffers, { desc = "Telescope buffers" })
+vim.keymap.set("n", "<leader>d", fzfLua.diagnostics_workspace, { desc = "Telescope diagnostics" })
+vim.keymap.set("n", "<leader>r", fzfLua.lsp_references, { desc = "Telescope LSP references" })
 
 require("nvim-treesitter.configs").setup({
 	auto_install = true,

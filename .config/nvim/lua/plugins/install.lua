@@ -20,6 +20,5 @@ add("stevearc/conform.nvim")
 add("tpope/vim-surround")
 add("neovim/nvim-lspconfig")
 add("nvim-treesitter/nvim-treesitter")
-add({ source = "nvim-telescope/telescope.nvim", checkout = "0.1.8", depends = { "nvim-lua/plenary.nvim" } })
-
 add("EskelinenAntti/omarchy-theme-loader.nvim")
+add("ibhagwan/fzf-lua")
