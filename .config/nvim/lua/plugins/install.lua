@@ -22,22 +22,21 @@ add("neovim/nvim-lspconfig")
 add("nvim-treesitter/nvim-treesitter")
 add({ source = "nvim-telescope/telescope.nvim", checkout = "0.1.8", depends = { "nvim-lua/plenary.nvim" } })
 
-add({
-	source = "EskelinenAntti/omarchy-theme-loader.nvim",
-	checkout = "dev",
-	depends = {
-		"ribru17/bamboo.nvim",
-		{ source = "catppuccin/nvim", name = "catppuccin" },
-		"neanias/everforest-nvim",
-		"kepano/flexoki-neovim",
-		"ellisonleao/gruvbox.nvim",
-		"rebelot/kanagawa.nvim",
-		"tahayvr/matteblack.nvim",
-		"shaunsingh/nord.nvim",
-		{ source = "rose-pine/neovim", name = "rose-pine" },
-		"folke/tokyonight.nvim",
-		"EdenEast/nightfox.nvim",
-		"loctvl842/monokai-pro.nvim",
+add("EskelinenAntti/omarchy-theme-loader.nvim")
+require("omarchy-theme-loader").setup({
+	themes = {
+		["tokyo-night"] = { colorscheme = "slate" },
+		["catppuccin"] = { colorscheme = "blue" },
+		["everforest"] = { colorscheme = "desert" },
+		["gruvbox"] = { colorscheme = "retrobox" },
+		["osaka-jade"] = { colorscheme = "slate" },
+		["kanagawa"] = { colorscheme = "slate" },
+		["nord"] = { colorscheme = "blue" },
+		["matte-black"] = { colorscheme = "koehler" },
+		["ristretto"] = { colorscheme = "koehler" },
+		["flexoki-light"] = { colorscheme = "morning" },
+		["rose-pine"] = { colorscheme = "morning" },
+		["catppuccin-latte"] = { colorscheme = "delek" },
 	},
 })
 
