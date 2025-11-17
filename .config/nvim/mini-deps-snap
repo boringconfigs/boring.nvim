@@ -1,8 +1,8 @@
 return {
-  ["conform.nvim"] = "cde4da5c1083d3527776fee69536107d98dae6c9",
-  ["fzf-lua"] = "abad16fa530926b34413f7763cb2c202bcf5b392",
-  ["mini.nvim"] = "dce9bc4e19d02d5c37fe71c16f40f8a5536b0386",
-  ["nvim-lspconfig"] = "abf6d190f2c06818489c0bd4b926e7e3a06c5e51",
+  ["conform.nvim"] = "1bf8b5b9caee51507aa51eaed3da5b0f2595c6b9",
+  ["fzf-lua"] = "6db367781c650d0aa336577aa16bbb6aeca9ddfa",
+  ["mini.nvim"] = "b409fd1d8b9ea7ec7c0923eb2562b52ed5d1ab0a",
+  ["nvim-lspconfig"] = "d4f77e7a9a4b910622a0bc225e482c4c808e4099",
   ["nvim-treesitter"] = "42fc28ba918343ebfd5565147a42a26580579482",
   ["omarchy-theme-loader.nvim"] = "d801abf2fe73cc08405fad78327237df7df4a553",
   ["vim-surround"] = "3d188ed2113431cf8dac77be61b842acb64433d9"
