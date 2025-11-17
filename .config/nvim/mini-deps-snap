@@ -4,6 +4,6 @@ return {
   ["mini.nvim"] = "b409fd1d8b9ea7ec7c0923eb2562b52ed5d1ab0a",
   ["nvim-lspconfig"] = "d4f77e7a9a4b910622a0bc225e482c4c808e4099",
   ["nvim-treesitter"] = "42fc28ba918343ebfd5565147a42a26580579482",
-  ["omarchy-theme-loader.nvim"] = "d801abf2fe73cc08405fad78327237df7df4a553",
+  ["omarchy-theme-loader.nvim"] = "b4d1891cf50b4bb47f25f4eb3663ff28ddb451c8",
   ["vim-surround"] = "3d188ed2113431cf8dac77be61b842acb64433d9"
 }
