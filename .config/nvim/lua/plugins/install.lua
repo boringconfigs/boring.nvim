@@ -13,12 +13,15 @@ if not vim.loop.fs_stat(mini_path) then
 	vim.cmd('echo "Installed `mini.nvim`" | redraw')
 end
 
-require("mini.deps").setup({ path = { package = path_package } })
+local deps = require("mini.deps")
+deps.setup({ path = { package = path_package } })
 
-local add = MiniDeps.add
+local add = deps.add
 add("stevearc/conform.nvim")
 add("tpope/vim-surround")
 add("neovim/nvim-lspconfig")
 add("nvim-treesitter/nvim-treesitter")
 add("EskelinenAntti/omarchy-theme-loader.nvim")
 add("ibhagwan/fzf-lua")
+
+deps.snap_load()
