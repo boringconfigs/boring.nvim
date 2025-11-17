@@ -57,4 +57,21 @@ require("nvim-treesitter.configs").setup({
 })
 
 vim.cmd.colorscheme("retrobox")
+require("omarchy-theme-loader").setup({
+	themes = {
+		["tokyo-night"] = { colorscheme = "slate" },
+		["catppuccin"] = { colorscheme = "blue" },
+		["everforest"] = { colorscheme = "desert" },
+		["gruvbox"] = { colorscheme = "retrobox" },
+		["osaka-jade"] = { colorscheme = "slate" },
+		["kanagawa"] = { colorscheme = "slate" },
+		["nord"] = { colorscheme = "blue" },
+		["matte-black"] = { colorscheme = "koehler" },
+		["ristretto"] = { colorscheme = "koehler" },
+		["flexoki-light"] = { colorscheme = "morning" },
+		["rose-pine"] = { colorscheme = "morning" },
+		["catppuccin-latte"] = { colorscheme = "delek" },
+	},
+})
+
 require("omarchy-theme-loader.transparency").set_transparent_background()
