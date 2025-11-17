@@ -20,7 +20,12 @@ require("conform").setup({
 
 local fzfLua = require("fzf-lua")
 fzfLua.setup({
-	file_ignore_patterns = { "node_modules/", ".git/" },
+	files = {
+		find_opts = "-type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/build/*'",
+	},
+	grep = {
+		rg_opts = "--hidden --line-number --column --no-heading --smart-case --color=never --glob=!node_modules/* --glob=!.git/* --glob=!build/* --glob=!package-lock.json",
+	},
 })
 
 vim.keymap.set("n", "<leader>f", fzfLua.files, { desc = "Telescope find files" })
