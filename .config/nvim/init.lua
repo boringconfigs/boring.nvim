@@ -19,4 +19,8 @@ vim.keymap.set("n", "<leader>e", "<cmd>Ex<cr>", { desc = "Open file explorer" })
 vim.keymap.set("t", "<C-w>N", [[<C-\><C-n>]], { desc = "Enter normal mode in terminal" })
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 
+vim.api.nvim_create_user_command("Today", function()
+	vim.cmd.edit(vim.fs.joinpath("daily", os.date("%Y-%m-%d") .. ".md"))
+end, {})
+
 require("plugins")
