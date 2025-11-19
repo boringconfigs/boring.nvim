@@ -23,4 +23,21 @@ vim.api.nvim_create_user_command("Today", function()
 	vim.cmd.edit(vim.fs.joinpath("daily", os.date("%Y-%m-%d") .. ".md"))
 end, {})
 
+vim.api.nvim_create_user_command("Yesterday", function()
+	local yesterday = os.date("*t")
+	yesterday.day = yesterday.day - 1
+	if type(yesterday) == "string" then
+		return
+	end
+	vim.cmd.edit(vim.fs.joinpath("daily", os.date("%Y-%m-%d", os.time(yesterday)) .. ".md"))
+end, {})
+
+vim.api.nvim_create_user_command("Tomorrow", function()
+	local tomorrow = os.date("*t")
+	tomorrow.day = tomorrow.day + 1
+	if type(tomorrow) == "string" then
+		return
+	end
+	vim.cmd.edit(vim.fs.joinpath("daily", os.date("%Y-%m-%d", os.time(tomorrow)) .. ".md"))
+end, {})
 require("plugins")
