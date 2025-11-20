@@ -19,6 +19,12 @@ vim.keymap.set("n", "<leader>e", "<cmd>Ex<cr>", { desc = "Open file explorer" })
 vim.keymap.set("t", "<C-w>N", [[<C-\><C-n>]], { desc = "Enter normal mode in terminal" })
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 
+---@param time integer?
+---@return osdate
+local function osdate(time)
+	return os.date("*t", time) --[[@as osdate]]
+end
+
 ---Parse date from current buffer name, or return current date.
 ---@return osdate
 local function get_buffer_date()
@@ -26,31 +32,36 @@ local function get_buffer_date()
 	local y, m, d = filename:match("(%d%d%d%d)%-(%d%d)%-(%d%d)")
 	local date = { year = tonumber(y), month = tonumber(m), day = tonumber(d) }
 	if not (date.year and date.month and date.day) then
-		return os.date("*t") --[[@as osdate]]
+		return osdate()
 	end
 
-	return os.date("*t", os.time(date)) --[[@as osdate]]
+	return osdate(os.time(date))
 end
 
----Open daily note.
----@param offset integer Offset from the current day. 1 meaning tomorrow, -1 yesterday, for example.
-local function open_daily(offset)
+---Open daily note for given date
+---@param date osdate
+local function open_daily_note(date)
+	vim.cmd.edit(vim.fs.joinpath("daily", os.date("%Y-%m-%d", os.time(date)) .. ".md"))
+end
+
+---Open next/previous daily note with given offset of days to currently open note or current day
+---@param offset integer Offset from the current day or note that is currently open. 1 meaning tomorrow, -1 yesterday, for example.
+local function open_daily_at_offset(offset)
 	local base = get_buffer_date()
 	base.day = base.day + offset
-	local path = vim.fs.joinpath("daily", os.date("%Y-%m-%d", os.time(base)) .. ".md")
-	vim.cmd.edit(path)
+	open_daily_note(base)
 end
 
 vim.api.nvim_create_user_command("Today", function()
-	open_daily(0)
+	open_daily_note(osdate())
 end, {})
 
 vim.api.nvim_create_user_command("Yesterday", function()
-	open_daily(-1)
+	open_daily_at_offset(-1)
 end, {})
 
 vim.api.nvim_create_user_command("Tomorrow", function()
-	open_daily(1)
+	open_daily_at_offset(1)
 end, {})
 
 require("plugins")
