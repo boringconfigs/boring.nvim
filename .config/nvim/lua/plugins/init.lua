@@ -24,6 +24,7 @@ local language_servers = {
 	"lua_ls",
 	"json_ls",
 	"yamlls",
+	"pyright",
 }
 
 for _, server in ipairs(language_servers) do
