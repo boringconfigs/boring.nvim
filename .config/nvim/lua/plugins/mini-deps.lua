@@ -15,13 +15,3 @@ end
 
 local deps = require("mini.deps")
 deps.setup({ path = { package = path_package } })
-
-local add = deps.add
-add("stevearc/conform.nvim")
-add("tpope/vim-surround")
-add("neovim/nvim-lspconfig")
-add("nvim-treesitter/nvim-treesitter")
-add("EskelinenAntti/omarchy-theme-loader.nvim")
-add("ibhagwan/fzf-lua")
-
-deps.snap_load()
