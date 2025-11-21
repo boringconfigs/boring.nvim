@@ -1,3 +1,8 @@
+--[[
+--Script for installing mini.deps plugin manager if not found. 
+--
+--This can be deleted once migrating to built in plugin manager in Neovim 0.12
+--]]
 local path_package = vim.fn.stdpath("data") .. "/site/"
 local mini_path = path_package .. "pack/deps/start/mini.nvim"
 if not vim.loop.fs_stat(mini_path) then
