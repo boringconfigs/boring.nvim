@@ -5,7 +5,6 @@ local add = deps.add
 add("stevearc/conform.nvim")
 add("tpope/vim-surround")
 add("neovim/nvim-lspconfig")
-add("nvim-treesitter/nvim-treesitter")
 add("EskelinenAntti/omarchy-theme-loader.nvim")
 add("ibhagwan/fzf-lua")
 
@@ -93,27 +92,6 @@ vim.keymap.set("n", "<leader>/", fzfLua.live_grep, { desc = "Telescope live grep
 vim.keymap.set("n", "<leader>b", fzfLua.buffers, { desc = "Telescope buffers" })
 vim.keymap.set("n", "<leader>d", fzfLua.diagnostics_workspace, { desc = "Telescope diagnostics" })
 vim.keymap.set("n", "<leader>r", fzfLua.lsp_references, { desc = "Telescope LSP references" })
-
-require("nvim-treesitter.configs").setup({
-	auto_install = true,
-	highlight = {
-		enable = true,
-		additional_vim_regex_highlighting = true,
-	},
-	ensure_installed = {},
-	sync_install = false,
-	ignore_install = {},
-	modules = {},
-	incremental_selection = {
-		enable = true,
-		keymaps = {
-			node_incremental = "an",
-			node_decremental = "in",
-			init_selection = false,
-			scope_incremental = false,
-		},
-	},
-})
 
 vim.cmd.colorscheme("retrobox")
 require("omarchy-theme-loader").setup({
