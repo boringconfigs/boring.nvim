@@ -7,6 +7,16 @@ add("tpope/vim-surround")
 add("neovim/nvim-lspconfig")
 add("EskelinenAntti/omarchy-theme-loader.nvim")
 add("ibhagwan/fzf-lua")
+add({
+	source = "nvim-treesitter/nvim-treesitter",
+	checkout = "main",
+	monitor = "main",
+	hook = {
+		post_checkout = function()
+			vim.cmd("TSUpdate")
+		end,
+	},
+})
 
 deps.snap_load()
 
@@ -59,6 +69,34 @@ vim.lsp.config("lua_ls", {
 
 vim.lsp.enable(language_servers)
 
+require("nvim-treesitter")
+	.install({
+		"typescript",
+		"tsx",
+		"html",
+		"go",
+		"markdown",
+		"markdown_inline",
+		"json",
+		"yaml",
+		"python",
+	})
+	:wait()
+
+local ts_filetypes = {}
+for _, installed in ipairs(require("nvim-treesitter.config").get_installed()) do
+	for _, ft in ipairs(vim.treesitter.language.get_filetypes(installed)) do
+		table.insert(ts_filetypes, ft)
+	end
+end
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = ts_filetypes,
+	callback = function()
+		vim.treesitter.start()
+	end,
+})
+
 require("conform").setup({
 	format_on_save = {},
 	--[[ List of formatters by filetype. In order to add new formatters, you need to do the following:
@@ -78,9 +116,6 @@ require("conform").setup({
 
 local fzfLua = require("fzf-lua")
 fzfLua.setup({
-	files = {
-		find_opts = "-type f -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/build/*'",
-	},
 	grep = {
 		rg_opts = "--hidden --line-number --column --no-heading --smart-case --color=never --glob=!node_modules/* --glob=!.git/* --glob=!build/* --glob=!package-lock.json",
 	},
@@ -112,3 +147,15 @@ require("omarchy-theme-loader").setup({
 })
 
 require("omarchy-theme-loader.transparency").set_transparent_background()
+
+vim.api.nvim_create_user_command("Today", function()
+	require("plugins.notes").open_daily_note()
+end, {})
+
+vim.api.nvim_create_user_command("Yesterday", function()
+	require("plugins.notes").open_daily_at_offset(-1)
+end, {})
+
+vim.api.nvim_create_user_command("Tomorrow", function()
+	require("plugins.notes").open_daily_at_offset(1)
+end, {})
