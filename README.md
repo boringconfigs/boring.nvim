@@ -1,4 +1,4 @@
-# boring.nvim
+# boring.neovim
 
 ## Installation
 
