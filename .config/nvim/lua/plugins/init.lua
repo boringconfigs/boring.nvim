@@ -79,9 +79,9 @@ vim.api.nvim_create_user_command("Today", function()
 end, {})
 
 vim.api.nvim_create_user_command("Yesterday", function()
-	require("plugins.notes").open_daily_at_offset(-1)
+	require("plugins.notes").open_yesterday()
 end, {})
 
 vim.api.nvim_create_user_command("Tomorrow", function()
-	require("plugins.notes").open_daily_at_offset(1)
+	require("plugins.notes").open_tomorrow()
 end, {})
