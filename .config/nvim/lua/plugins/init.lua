@@ -17,6 +17,10 @@ add({
 		end,
 	},
 })
+add({source="nvim-treesitter/nvim-treesitter-textobjects",
+	checkout = "main",
+	monitor = "main",
+})
 
 deps.snap_load()
 
