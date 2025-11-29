@@ -22,23 +22,7 @@ add({ source = "nvim-treesitter/nvim-treesitter-textobjects", checkout = "main",
 deps.snap_load()
 require("plugins.treesitter")
 require("plugins.lsp")
-
-require("conform").setup({
-	format_on_save = {},
-	--[[ List of formatters by filetype. In order to add new formatters, you need to do the following:
-    --     1. Find and install the formatter.
-    --     2. Find the configuration for the formatter in https://github.com/stevearc/conform.nvim/tree/master/lua/conform/formatters
-    --     3. Add the name of the configuration (the name of the file without .lua extension) to below list with filetype.
-    --]]
-	formatters_by_ft = {
-		lua = { "stylua" },
-		kotlin = { "ktfmt" },
-		typescript = { "prettier" },
-		typescriptreact = { "prettier" },
-		markdown = { "prettier" },
-		go = { "gofmt" },
-	},
-})
+require("plugins.formatter")
 
 local fzfLua = require("fzf-lua")
 fzfLua.setup({
