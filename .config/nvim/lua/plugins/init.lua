@@ -2,7 +2,6 @@ require("plugins.mini-deps")
 
 local deps = require("mini.deps")
 local add = deps.add
-add("stevearc/conform.nvim")
 add("tpope/vim-surround")
 add("neovim/nvim-lspconfig")
 add("EskelinenAntti/omarchy-theme-loader.nvim")
@@ -22,7 +21,6 @@ add({ source = "nvim-treesitter/nvim-treesitter-textobjects", checkout = "main",
 deps.snap_load()
 require("plugins.treesitter")
 require("plugins.lsp")
-require("plugins.formatter")
 
 local fzfLua = require("fzf-lua")
 fzfLua.setup({
