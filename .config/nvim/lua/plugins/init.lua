@@ -1,24 +1,4 @@
 require("plugins.mini-deps")
-
-local deps = require("mini.deps")
-local add = deps.add
-add("tpope/vim-surround")
-add("neovim/nvim-lspconfig")
-add("EskelinenAntti/omarchy-theme-loader.nvim")
-add("ibhagwan/fzf-lua")
-add({
-	source = "nvim-treesitter/nvim-treesitter",
-	checkout = "main",
-	monitor = "main",
-	hook = {
-		post_checkout = function()
-			vim.cmd("TSUpdate")
-		end,
-	},
-})
-add({ source = "nvim-treesitter/nvim-treesitter-textobjects", checkout = "main", monitor = "main" })
-
-deps.snap_load()
 require("plugins.treesitter")
 require("plugins.lsp")
 
