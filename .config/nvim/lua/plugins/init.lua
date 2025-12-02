@@ -1,6 +1,10 @@
 require("plugins.mini-deps")
+
+local deps = require("mini.deps")
+deps.snap_load()
 require("plugins.treesitter")
 require("plugins.lsp")
+require("plugins.formatter")
 
 local fzfLua = require("fzf-lua")
 fzfLua.setup({
