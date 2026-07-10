@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd("PackChanged", {
 })
 
 vim.pack.add({
-	"https://github.com/sainnhe/gruvbox-material",
+	"https://github.com/webhooked/kanso.nvim",
 	"https://github.com/stevearc/conform.nvim",
 	"https://github.com/tpope/vim-surround",
 	"https://github.com/neovim/nvim-lspconfig",
@@ -37,6 +37,6 @@ end, { desc = "Update plugins" })
 require("plugins.nvim-lspconfig")
 require("plugins.conform")
 require("plugins.fzf-lua")
-require("plugins.gruvbox-material")
+require("plugins.theme")
 require("plugins.oil-nvim")
 require("plugins.github-url")
