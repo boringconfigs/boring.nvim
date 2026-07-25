@@ -28,6 +28,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
 		end
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = args.buf, desc = "Go to definition" })
+		vim.keymap.set("n", "<leader>d", function()
+			vim.diagnostic.setqflist({ open = false })
+			vim.cmd("cfirst")
+		end, { desc = "LSP diagnostics" })
 	end,
 })
 

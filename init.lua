@@ -1,8 +1,7 @@
 vim.g.mapleader = " "
 vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 0
-vim.opt.guicursor = ""
-vim.opt.nu = true
+vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
 vim.opt.completeopt = { "menuone", "noselect", "popup" }
@@ -19,8 +18,12 @@ vim.opt.list = true
 vim.opt.listchars:append({ trail = "_", tab = "  " })
 vim.jumpoptions = "stack"
 vim.opt.autoread = true
+vim.opt.grepprg = "rg --vimgrep --smart-case"
 
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
 vim.keymap.set({ "n", "v" }, "<leader>p", '"+p')
+vim.keymap.set("n", "<leader>/", ":silent grep ")
+
+require("vim._core.ui2").enable()
 
 require("plugins")
