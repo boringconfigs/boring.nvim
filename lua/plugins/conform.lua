@@ -10,5 +10,6 @@ require("conform").setup({
 		typescript = { "prettier" },
 		typescriptreact = { "prettier" },
 		go = { "gofmt" },
+		c = { "clang-format" },
 	},
 })
