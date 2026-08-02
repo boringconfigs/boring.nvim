@@ -10,7 +10,7 @@ fzfLua.setup({
 	},
 	keymap = {
 		fzf = {
-			["ctrl-a"] = "select-all+accept",
+			["alt-a"] = "select-all+accept",
 			["ctrl-u"] = "half-page-up",
 			["ctrl-d"] = "half-page-down",
 		},
