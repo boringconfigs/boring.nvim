@@ -1,4 +1,5 @@
 local fzfLua = require("fzf-lua")
+
 fzfLua.setup({
 	files = {
 		formatter = "path.filename_first",
@@ -6,6 +7,13 @@ fzfLua.setup({
 	grep = {
 		rg_opts = "--hidden --line-number --column --no-heading --smart-case --color=never --glob=!node_modules/* --glob=!.git/* --glob=!build/* --glob=!package-lock.json",
 		formatter = "path.filename_first",
+	},
+	keymap = {
+		fzf = {
+			["ctrl-a"] = "select-all+accept",
+			["ctrl-u"] = "half-page-up",
+			["ctrl-d"] = "half-page-down",
+		},
 	},
 })
 
