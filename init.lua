@@ -18,11 +18,9 @@ vim.opt.list = true
 vim.opt.listchars:append({ trail = "_", tab = "  " })
 vim.jumpoptions = "stack"
 vim.opt.autoread = true
-vim.opt.grepprg = "rg --vimgrep --smart-case"
 
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
 vim.keymap.set({ "n", "v" }, "<leader>p", '"+p')
-vim.keymap.set("n", "<leader>/", ":silent grep ")
 
 require("vim._core.ui2").enable()
 

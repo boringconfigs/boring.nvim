@@ -9,5 +9,8 @@ fzfLua.setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>f", fzfLua.files, { desc = "Telescope find files" })
-vim.keymap.set("n", "<leader>b", fzfLua.buffers, { desc = "Telescope buffers" })
+vim.keymap.set("n", "<leader>f", fzfLua.files, { desc = "Fuzzy find files" })
+vim.keymap.set("n", "<leader>b", fzfLua.buffers, { desc = "Fuzzy find buffers" })
+vim.keymap.set("n", "<leader>/", fzfLua.live_grep, { desc = "Grep" })
+vim.keymap.set("v", "<leader>/", fzfLua.grep_visual, { desc = "Grep selection" })
+vim.keymap.set("n", "<leader>*", fzfLua.grep_cword, { desc = "Grep cword" })
